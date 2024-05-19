@@ -3,4 +3,4 @@
 # Brennan D Baraban <375@holbertonschool.com>
 
 def pow(a, b):
-    return(a ** b)
+    return (a ** b)
