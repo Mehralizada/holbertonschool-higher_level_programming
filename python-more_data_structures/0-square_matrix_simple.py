@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-def square_mqatrix_simple(matrix= []):
-    squared = []
-    for line in matrix:
-        squared.append([c**2 for c in line])
-        return squared
+def square_matrix_simple(matrix=[]):
+    return [[y ** 2 for y in x] for x in matrix]
