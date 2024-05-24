@@ -2,8 +2,9 @@
 
 import sys
 
+
 def safe_function(fct, *args):
-    try:
+     try:
         result = fct(*args)
         return (result)
     except:
