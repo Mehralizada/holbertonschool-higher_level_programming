@@ -1,34 +1,17 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+class CountedIterator:
 
-# VerboseList class definition
-class VerboseList(list):
-    def append(self, item):
-        super().append(item)
-        print(f"Added [{item}] to the list.")
+    def __init__(self, iterable):
+        self.iterator = iter(iterable)
+        self.count = 0
 
-    def extend(self, items):
-        super().extend(items)
-        print(f"Extended the list with [{len(items)}] items.")
+    def __iter__(self):
+        return self
 
-    def remove(self, item):
-        super().remove(item)
-        print(f"Removed [{item}] from the list.")
+    def __next__(self):
+        item = next(self.iterator)
+        self.count += 1
+        return item
 
-    def pop(self, index=None):
-        if index is None:
-            item = super().pop()
-            print(f"Popped [{item}] from the list.")
-            return item
-        else:
-            item = super().pop(index)
-            print(f"Popped [{item}] from the list.")
-            return item
-
-# Testing the VerboseList class
-if __name__ == "__main__":
-    vl = VerboseList([1, 2, 3])
-    vl.append(4)
-    vl.extend([5, 6])
-    vl.remove(2)
-    vl.pop()
-    vl.pop(0)
+    def get_count(self):
+        return self.count
