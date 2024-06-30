@@ -28,3 +28,7 @@ Write a script that takes in the name of a state as an argument and lists all ci
 6. First state model
 
 Write a python file that contains the class definition of a State and an instance Base = declarative_base():
+
+7. All states via SQLAlchemy
+
+Write a script that lists all State objects from the database hbtn_0e_6_usa
