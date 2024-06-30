@@ -16,3 +16,7 @@ Write a script that takes in an argument and displays all values in the states t
 3. SQL Injection...
 
 Wait, do you remember the previous task? Did you test "Arizona'; TRUNCATE TABLE states ; SELECT * FROM states WHERE name = '" as an input?
+
+4. Cities by states
+
+Write a script that lists all cities from the database hbtn_0e_4_usa
