@@ -27,3 +27,6 @@ Write a script that creates the database hbtn_0d_usa and the table states (in th
 
 Write a script that creates the database hbtn_0d_usa and the table cities (in the database hbtn_0d_usa) on your MySQL server.
 
+8. Cities of California
+
+Write a script that lists all the cities of California that can be found in the database hbtn_0d_usa.
