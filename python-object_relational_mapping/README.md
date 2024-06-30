@@ -24,3 +24,7 @@ Write a script that lists all cities from the database hbtn_0e_4_usa
 5. All cities by state
 
 Write a script that takes in the name of a state as an argument and lists all cities of that state, using the database hbtn_0e_4_usa
+
+6. First state model
+
+Write a python file that contains the class definition of a State and an instance Base = declarative_base():
