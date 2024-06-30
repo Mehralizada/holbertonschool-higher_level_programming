@@ -20,3 +20,7 @@ Wait, do you remember the previous task? Did you test "Arizona'; TRUNCATE TABLE 
 4. Cities by states
 
 Write a script that lists all cities from the database hbtn_0e_4_usa
+
+5. All cities by state
+
+Write a script that takes in the name of a state as an argument and lists all cities of that state, using the database hbtn_0e_4_usa
