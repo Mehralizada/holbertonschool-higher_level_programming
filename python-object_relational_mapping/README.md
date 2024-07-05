@@ -40,3 +40,7 @@ Write a script that prints the first State object from the database hbtn_0e_6_us
 9. Contains `a`
 
 Write a script that lists all State objects that contain the letter a from the database hbtn_0e_6_usa
+
+10. Get a state
+
+Write a script that prints the State object with the name passed as argument from the database hbtn_0e_6_usa
