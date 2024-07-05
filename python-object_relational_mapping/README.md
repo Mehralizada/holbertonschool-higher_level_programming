@@ -32,3 +32,7 @@ Write a python file that contains the class definition of a State and an instanc
 7. All states via SQLAlchemy
 
 Write a script that lists all State objects from the database hbtn_0e_6_usa
+
+8. First state
+
+Write a script that prints the first State object from the database hbtn_0e_6_usa
