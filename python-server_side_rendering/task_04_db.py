@@ -1,41 +1,37 @@
-from flask import Flask, render_template, request, abort
+from flask import Flask, request, render_template, jsonify
 import sqlite3
-import csv
 import json
+import csv
 
 app = Flask(__name__)
 
-# Function to read data from SQLite database
-def fetch_from_sqlite():
-    conn = sqlite3.connect('products.db')
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM Products')
-    rows = cursor.fetchall()
-    conn.close()
-    return rows
+def fetch_data_from_json():
+    with open('products.json') as f:
+        return json.load(f)
 
-# Function to read data from JSON file
-def fetch_from_json():
-    with open('data.json', 'r') as file:
-        return json.load(file)
-
-# Function to read data from CSV file
-def fetch_from_csv():
-    with open('data.csv', 'r') as file:
-        reader = csv.DictReader(file)
+def fetch_data_from_csv():
+    with open('products.csv') as f:
+        reader = csv.DictReader(f)
         return [row for row in reader]
 
+def fetch_data_from_sql():
+    conn = sqlite3.connect('products.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM Products")
+    rows = cursor.fetchall()
+    conn.close()
+    return [{"id": row[0], "name": row[1], "category": row[2], "price": row[3]} for row in rows]
+
 @app.route('/products')
-def display_products():
+def products():
     source = request.args.get('source')
     
     if source == 'json':
-        data = fetch_from_json()
+        data = fetch_data_from_json()
     elif source == 'csv':
-        data = fetch_from_csv()
+        data = fetch_data_from_csv()
     elif source == 'sql':
-        data = fetch_from_sqlite()
-        data = [{'id': row[0], 'name': row[1], 'category': row[2], 'price': row[3]} for row in data]
+        data = fetch_data_from_sql()
     else:
         return "Wrong source", 400
     
